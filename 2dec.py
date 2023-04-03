@@ -20,7 +20,7 @@ def battle(me, opp):
     elif me == opp:
         return 3
     else:
-        return "Something went wrong, unsupported battle scenario. Me: " + str(me) + ", Opponent: " + str(opp)
+        raise ValueError("Unsupported battle scenario. Me: " + str(me) + ", Opponent: " + str(opp))
 
 
 with open("input/2dec.txt") as file:
@@ -41,9 +41,9 @@ with open("input/2dec.txt") as file:
             me = win[opp]
             points_task_two += 6
         else:
-            print ("Something went wrong, unsupported strategy. Strategy: " + str(second_sign))
+            raise ValueError("Unsupported strategy. Strategy: " + str(second_sign))
 
         points_task_two += score_board[me]
 
 print("Answer to task 1: My total score according to plan " + str(points_task_one))
-print("Answer to task 1: My total score according to plan " + str(points_task_two))
+print("Answer to task 2: My total score according to plan " + str(points_task_two))
